@@ -197,21 +197,25 @@
 
                 <form
                     x-data="chjForm"
-                    action="{{ route('contact.store') }}"
+                    action="{{ route('donate.store') }}"
                     method="POST"
+                    @submit.prevent="submit($event)"
                     class="mt-5 space-y-4"
                 >
                     @csrf
-                    <input type="hidden" name="subject" value="Donation notification"/>
                     <div class="grid gap-4 sm:grid-cols-2">
                         <x-ui.input label="Your name" name="name" required placeholder="Aisha Bello"/>
                         <x-ui.input label="Email" name="email" type="email" required placeholder="you@example.com"/>
                     </div>
                     <div class="grid gap-4 sm:grid-cols-2">
                         <x-ui.input label="Amount sent" name="amount" placeholder="₦50,000 / $100 USD"/>
-                        <x-ui.input label="Date sent" name="date" type="date"/>
+                        <x-ui.input label="Date sent" name="date_sent" type="date"/>
                     </div>
                     <x-ui.textarea label="Anything you'd like us to know?" name="message" rows="3" placeholder="e.g., 'In memory of my mother' or 'For the Safe Harbor program'"/>
+                    <label class="flex items-start gap-3 text-sm text-stone-700">
+                        <input type="checkbox" name="consent" required class="mt-1 h-4 w-4 rounded border-stone-300 text-brand-600 focus:ring-brand-500"/>
+                        <span>I consent to CHJ Foundation storing my information to respond to this donation notification. (See our <a href="#" class="text-brand-700 hover:underline">Privacy Policy</a>.)</span>
+                    </label>
                     <div class="flex justify-end">
                         <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all hover:bg-brand-700 hover:shadow-lifted">
                             Notify CHJ Foundation

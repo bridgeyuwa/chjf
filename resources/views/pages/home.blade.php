@@ -11,10 +11,9 @@
     {{-- 2. Mission statement band --}}
     <x-ui.section bg="white" spacing="default">
         <div class="container-prose">
-            <div class="mx-auto max-w-3xl text-center"
+            <div class="mx-auto max-w-3xl text-center fade-up"
                  x-data="reveal"
-                 x-intersect.once="onIntersect()"
-                 class="fade-up">
+                 x-intersect.once="onIntersect()">
                 <span class="eyebrow justify-center">Who We Are</span>
                 <p class="mt-5 font-display text-2xl font-medium leading-relaxed text-stone-800 sm:text-3xl sm:leading-relaxed">
                     We are a faith-rooted ministry serving the most vulnerable across our communities — answering the ancient call to feed the hungry, shelter the stranger, care for the sick, and stand with the broken.
@@ -40,10 +39,9 @@
     <x-ui.section bg="white" spacing="default">
         <div class="container-prose">
             <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-                <div class="relative"
+                <div class="relative fade-up"
                      x-data="reveal"
-                     x-intersect.once="onIntersect()"
-                     class="fade-up">
+                     x-intersect.once="onIntersect()">
                     <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lifted">
                         <img
                             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"

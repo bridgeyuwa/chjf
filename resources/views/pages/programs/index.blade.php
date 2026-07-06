@@ -13,10 +13,9 @@
 
 <x-ui.section bg="white" spacing="default">
     <div class="container-prose">
-        <div class="mx-auto max-w-3xl text-center"
+        <div class="mx-auto max-w-3xl text-center fade-up"
              x-data="reveal"
-             x-intersect.once="onIntersect()"
-             class="fade-up">
+             x-intersect.once="onIntersect()">
             <p class="text-lg leading-relaxed text-stone-600">
                 We deliberately keep our focus narrow. Rather than spreading thin across dozens of causes, we run five programs — each deeply, faithfully, and with measurable impact. Click any program to learn how it works, who it serves, and what difference it makes.
             </p>

@@ -36,16 +36,17 @@ Route::get('/programs/{slug}', [ProgramController::class, 'show'])->name('progra
 // Get Involved (hub + sub-pages)
 Route::get('/get-involved', [GetInvolvedController::class, 'index'])->name('get-involved.index');
 Route::get('/get-involved/volunteer', [VolunteerController::class, 'index'])->name('get-involved.volunteer');
-Route::post('/get-involved/volunteer', [VolunteerController::class, 'store'])->name('volunteer.store');
+Route::post('/get-involved/volunteer', [VolunteerController::class, 'store'])->name('volunteer.store')->middleware('throttle:10,1');
 Route::get('/get-involved/donate', [DonateController::class, 'index'])->name('get-involved.donate');
+Route::post('/get-involved/donate', [DonateController::class, 'store'])->name('donate.store')->middleware('throttle:10,1');
 
 // Contact
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store')->middleware('throttle:10,1');
 
 // Prayer Request
 Route::get('/prayer-request', [PrayerRequestController::class, 'index'])->name('prayer-request');
-Route::post('/prayer-request', [PrayerRequestController::class, 'store'])->name('prayer.store');
+Route::post('/prayer-request', [PrayerRequestController::class, 'store'])->name('prayer.store')->middleware('throttle:10,1');
 
 // Blog
 Route::get('/stories', [BlogController::class, 'index'])->name('blog.index');
@@ -66,4 +67,4 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 
 // Newsletter
-Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter.store');
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'store'])->name('newsletter.store')->middleware('throttle:10,1');

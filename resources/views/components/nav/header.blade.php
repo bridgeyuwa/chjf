@@ -45,7 +45,7 @@
     ];
 @endphp
 
-<header x-data="{ scrolled: false }" @scroll.window="scrolled = window.scrollY > 8" class="sticky top-0 z-50 border-b transition-colors duration-200"
+<header x-data="mobileNav" @scroll.window="scrolled = window.scrollY > 8" @keydown.escape.window="if (open) close()" class="sticky top-0 z-50 border-b transition-colors duration-200"
     :class="scrolled ? 'border-stone-200 bg-white/95 backdrop-blur-md shadow-soft' : 'border-transparent bg-white'">
     <div class="container-prose">
         <div class="flex h-16 items-center justify-between sm:h-20">
@@ -125,7 +125,6 @@
 
                 {{-- Mobile toggle --}}
                 <button
-                    x-data="mobileNav"
                     @click="open = true; document.body.style.overflow = 'hidden'"
                     class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-stone-700 hover:bg-brand-50 lg:hidden"
                     aria-label="Open menu"

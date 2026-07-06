@@ -11,8 +11,9 @@ class BlogController extends Controller
     {
         $query = BlogPost::published()->orderBy('published_at', 'desc');
 
-        if ($category = $request->get('category')) {
-            $query->where('category', $category);
+        $category = $request->get('category');
+        if ($category && $category !== 'all') {
+            $query->whereRaw('LOWER(category) = ?', [strtolower($category)]);
         }
 
         $posts = $query->paginate(9);

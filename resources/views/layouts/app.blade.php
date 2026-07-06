@@ -11,6 +11,7 @@
     <meta property="og:locale" content="en_NG">
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
     <title>{{ isset($title) ? $title . ' · CHJ Foundation' : 'CHJ Foundation · Bringing hope & healing to a Hurting World' }}</title>
+    <style>[x-cloak]{display:none!important}</style>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('scripts')
 </head>
@@ -32,7 +33,6 @@
     {{-- Toast stack (AlpineJS) --}}
     <div
         x-data="toastStack"
-        @keydown.escape.window=""
         class="pointer-events-none fixed bottom-4 right-4 z-[100] flex w-full max-w-sm flex-col gap-2"
         aria-live="polite"
         aria-atomic="true"

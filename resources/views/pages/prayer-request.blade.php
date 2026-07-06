@@ -36,6 +36,7 @@
                     x-data="chjForm"
                     action="{{ route('prayer.store') }}"
                     method="POST"
+                    @submit.prevent="submit($event)"
                     class="space-y-5"
                 >
                     @csrf

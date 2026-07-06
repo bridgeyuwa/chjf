@@ -11,8 +11,9 @@ class EventsController extends Controller
     {
         $query = Event::upcoming()->orderBy('start_date');
 
-        if ($category = $request->get('category')) {
-            $query->where('category', $category);
+        $category = $request->get('category');
+        if ($category && $category !== 'all') {
+            $query->whereRaw('LOWER(category) = ?', [strtolower($category)]);
         }
 
         $events = $query->paginate(12);
@@ -22,6 +23,10 @@ class EventsController extends Controller
 
     public function show(Event $event)
     {
+        if (!$event->is_published) {
+            abort(404);
+        }
+
         return view('pages.events-show', compact('event'));
     }
 }

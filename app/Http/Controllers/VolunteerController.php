@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\VolunteerApplicationRequest;
 use App\Mail\VolunteerApplicationReceived;
 use App\Models\VolunteerApplication;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class VolunteerController extends Controller
@@ -18,9 +19,12 @@ class VolunteerController extends Controller
     {
         $application = VolunteerApplication::create($request->validated());
 
-        // Notify admin
-        Mail::to(config('mail.from.address'))
-            ->send(new VolunteerApplicationReceived($application));
+        try {
+            Mail::to(config('mail.from.address'))
+                ->send(new VolunteerApplicationReceived($application));
+        } catch (\Exception $e) {
+            Log::error('Failed to send volunteer application notification email: ' . $e->getMessage());
+        }
 
         return redirect()
             ->route('get-involved.volunteer')

@@ -30,6 +30,3 @@ Background check: {{ $application->consent_background_check ? 'YES' : 'NO' }}
 Data storage: {{ $application->consent_data ? 'YES' : 'NO' }}
 
 Submitted: {{ $application->created_at }}
-
----
-View in admin panel: {{ config('app.url') }}/admin/volunteer-applications/{{ $application->id }}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMessageReceived;
 use App\Models\ContactMessage;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -18,8 +19,12 @@ class ContactController extends Controller
     {
         $message = ContactMessage::create($request->validated());
 
-        Mail::to(config('mail.from.address'))
-            ->send(new ContactMessageReceived($message));
+        try {
+            Mail::to(config('mail.from.address'))
+                ->send(new ContactMessageReceived($message));
+        } catch (\Exception $e) {
+            Log::error('Failed to send contact notification email: ' . $e->getMessage());
+        }
 
         return redirect()
             ->route('contact')

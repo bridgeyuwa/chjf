@@ -1,7 +1,6 @@
 @props(['nav'])
 
 <div
-    x-data="mobileNav"
     x-show="open"
     x-cloak
     class="fixed inset-0 z-[60] lg:hidden"
@@ -48,7 +47,7 @@
                 @foreach ($nav as $item)
                     <li>
                         @if (isset($item['children']))
-                            <div x-data="{ expanded: $persist(false) }">
+                            <div x-data="{ expanded: false }">
                                 <button
                                     @click="expanded = !expanded"
                                     class="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-base font-medium text-stone-800 hover:bg-brand-50"

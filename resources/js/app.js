@@ -56,9 +56,10 @@ Alpine.data('chjForm', () => ({
     },
 }));
 
-// Mobile nav drill-down
+// Mobile nav drill-down (also drives header scroll state — both live on <header>)
 Alpine.data('mobileNav', () => ({
     open: false,
+    scrolled: false,
     expanded: {},
     toggle(group) {
         this.expanded[group] = !this.expanded[group];

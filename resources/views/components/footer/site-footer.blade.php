@@ -80,6 +80,7 @@
                         x-data="chjForm"
                         action="{{ route('newsletter.store') }}"
                         method="POST"
+                        @submit.prevent="submit($event)"
                         class="mt-6 flex flex-col gap-3 sm:flex-row"
                     >
                         @csrf
@@ -220,6 +221,3 @@
         </div>
     </div>
 </footer>
-
-{{-- x-cloak style (must be in head or here) --}}
-<style>[x-cloak] { display: none !important; }</style>

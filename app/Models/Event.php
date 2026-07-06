@@ -23,6 +23,9 @@ class Event extends Model
         'end_date' => 'datetime',
         'is_free' => 'boolean',
         'is_published' => 'boolean',
+        'price' => 'decimal:2',
+        'capacity' => 'integer',
+        'registered' => 'integer',
     ];
 
     protected static function booted(): void

@@ -79,6 +79,7 @@
                         x-data="chjForm"
                         action="{{ route('contact.store') }}"
                         method="POST"
+                        @submit.prevent="submit($event)"
                         class="mt-6 space-y-5"
                     >
                         @csrf

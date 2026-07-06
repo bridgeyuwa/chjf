@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\BlogPost;
 use App\Models\Event;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {

@@ -50,16 +50,6 @@
             'icon' => 'users',
             'accent' => 'bg-brand-50 text-brand-700 ring-brand-200',
         ],
-        [
-            'slug' => 'community-care',
-            'name' => 'Community Care',
-            'tag' => 'Housing & Shelter',
-            'desc' => 'Emergency shelter for families in crisis, plus longer-term transitional housing support.',
-            'img' => 'https://images.unsplash.com/photo-1505739679850-7adfa1f7fbcc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'stat' => '1,250 families sheltered',
-            'icon' => 'home',
-            'accent' => 'bg-stone-100 text-stone-700 ring-stone-200',
-        ],
     ];
 @endphp
 
@@ -68,7 +58,7 @@
         <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <x-ui.section-heading
                 eyebrow="What We Do"
-                title="Six programs. One mission."
+                title="Five programs. One mission."
                 intro="Each program is rooted in the conviction that every person bears the image of God — and deserves to be treated as such."
             />
             <div class="hidden sm:block">

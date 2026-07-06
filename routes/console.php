@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Schedule;
 
 // Laravel 13: scheduled commands go here (replaces the old app/Console/Kernel.php)
 // Schedule::command('inspire')->hourly();

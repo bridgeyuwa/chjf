@@ -84,6 +84,7 @@
                     x-data="chjForm"
                     action="{{ route('volunteer.store') }}"
                     method="POST"
+                    @submit.prevent="submit($event)"
                     class="space-y-6"
                 >
                     @csrf

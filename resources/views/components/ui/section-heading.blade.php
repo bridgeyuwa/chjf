@@ -17,10 +17,9 @@
     $eyebrowClass = $isLight ? 'text-brand-200' : 'text-brand-700';
 @endphp
 
-<div class="max-w-2xl {{ $aligns[$align] ?? $aligns['left'] }}"
+<div class="max-w-2xl {{ $aligns[$align] ?? $aligns['left'] }} fade-up"
      x-data="reveal"
-     x-intersect.once="onIntersect()"
-     class="fade-up">
+     x-intersect.once="onIntersect()">
     @if ($eyebrow)
         <span class="eyebrow {{ $eyebrowClass }}">{{ $eyebrow }}</span>
     @endif
