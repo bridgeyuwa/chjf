@@ -16,10 +16,21 @@
                  x-intersect.once="onIntersect()">
                 <span class="eyebrow justify-center">Who We Are</span>
                 <p class="mt-5 font-display text-2xl font-medium leading-relaxed text-stone-800 sm:text-3xl sm:leading-relaxed">
-                    We are a faith-rooted ministry serving the most vulnerable across our communities — answering the ancient call to feed the hungry, shelter the stranger, care for the sick, and stand with the broken.
+                   Our Mission is to Listen, to Serve,and Love, that all
+may know the transformative power of Jesus’s
+Compassionate Heart
                 </p>
                 <p class="mt-6 text-base text-stone-600">
-                    Founded in Abuja in 2018, CHJ Foundation now serves over <span class="font-semibold text-brand-700">15,000 people annually</span> across five core programs, in partnership with local churches, government agencies, and people of goodwill from every background.
+                    Empowered by the love of Jesus Christ, we envision
+a world where every individual is treated with dignity,
+and compassion, regardless of their religious
+background, circumstances or struggles. (Mat9:36)
+We see a community that embodies the heart of
+Jesus Christ, offering hope, healing and support to
+the marginalized or oppressed. (Mat11:28-30)
+Through our words & actions, we strive to be a
+beacon of love, fostering a culture of " empathy,
+kindness & grace.
                 </p>
                 <div class="mt-8 flex flex-wrap justify-center gap-3">
                     <x-ui.button variant="primary" href="{{ route('about') }}">Our story</x-ui.button>
